@@ -1,0 +1,57 @@
+body{
+	background-image: url("https://images3.alphacoders.com/874/874938.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+
+.heading-text{
+text-align:center;
+color:#ffffff;
+}
+
+input[type=text], input[type=password]{
+	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    box-sizing: border-box;
+    background: #79797900;
+    color: #ffffff;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 0px;
+  background-color: #3f3f3fad;
+  padding: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width:300px;
+  margin-top: 10%;
+}
+.form-label{
+color:#ffffff;
+}
+placeholder{
+color:#ffffff;
+}
