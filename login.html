@@ -1,50 +1,68 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Html Login Form</title>
-  <link rel="stylesheet" href="css/style.css">
-
+    <meta charset="UTF-8">
+    <title>Form registration with validation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div>
-  <form action="#">
-  <h3 class="heading-text">Login</h3>
-    <label class="form-label" for="username">Username</label>
-    <input type="text" id="username" name="username" placeholder="Your Username">
 
-    <label class="form-label" for="password">Password</label>
-    <input type="password" id="password" name="password" placeholder="Your Password">
-	
-    <input type="submit" value="Submit">
-    <p>Not yet a member? Please register <a href="registration.html">here</a></p>
-  </form>
-</div>
+    <div class="container">
 
-<!-- partial -->
-  <script  src="js/script.js"></script>
-  <script  src="js/login.js"></script>
+        <div class="section registration-container">
+            <form action="#" id="form">
+                <h1>Create an Account</h1>
+                <input type="email" id="email" placeholder="Email">
+                <input type="username" id="username" placeholder="Username">
+                <input type="password" id="pass1" placeholder="Password">
+                <input type="password" id="pass2" placeholder="Confirm Password">
+                <input type="checkbox" id="agree"><span>I agree temrs and conditions</span>
+                <span class="error-msg"></span>
+                <input id="submit" type="submit">Confirm</input>
+                <span>Or Sign Up with</span>
+                <div class="social-icons">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </form>
+        </div>
 
-  <!-- Import and configure the Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+        <div class="section login-container">
+            <form action="#">
+                <h1>Log In</h1>
+                <input type="email" placeholder="Email">
+                <input type="password"  placeholder="Password">
+                <span class="error-msg"></span>
+                <a href="#" class="pass-forgot">Forgot your password?</a>
+                <button>Log In</button>
+                <span>or Log In with</span>
+                <div class="social-icons">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </form>
+        </div>
 
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyDQ0ST-pQacUw9M__yY93C1O1QsyH_ZEvg",
-      authDomain: "tracks-and-beats-marketplace.firebaseapp.com",
-      databaseURL: "https://tracks-and-beats-marketplace-default-rtdb.firebaseio.com/",
-      projectId: "tracks-and-beats-marketplace",
-      storageBucket: "tracks-and-beats-marketplace.appspot.com",
-      messagingSenderId: "119300415131",
-      appId: "1:119300415131:web:74f95ff1e915471c3ef03e"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
+        <div class="over-container">
+            <div class="over-layer">
+                <div class="over over-left">
+                    <h1>Nice to See You!</h1>
+                    <p>Please log in with your userdata</p>
+                    <button class="btn" id="signin">Sign In</button>
+                </div>
+                <div class="over over-right">
+                    <h1>Nice to Meet You!</h1>
+                    <p>For register please enter your personal details</p>
+                    <button class="btn" id="signup">Sign Up</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>

@@ -3,15 +3,13 @@
  * Variables for the registration page
  */
 
-const registration_firstName = document.getElementById('registration_firstName');
-const registration_lastName = document.getElementById('registration_lastName');
-const registration_email = document.getElementById('registration_email');
-const registration_birthdate = document.getElementById('registration_birthdate');
-const registration_academicLevel = document.getElementById('registration_academicLevel');
-const registration_city = document.getElementById('registration_city');
-const registration_password = document.getElementById('registration_password');
-const registration_password_confirm = document.getElementById('registration_password_confirm');
-const registrationBtn = document.getElementById('registrationBtn');
+const registration_firstName = document.getElementById('firstname');
+const registration_lastName = document.getElementById('lastname');
+const registration_userName = document.getElementById('username');
+const registration_email = document.getElementById('email');
+const registration_password = document.getElementById('password');
+const registration_password_confirm = document.getElementById('confirmpassword');
+const registrationBtn = document.getElementById('submitbutton');
 
 const auth = firebase.auth();
 const database = firebase.firestore();
@@ -29,12 +27,11 @@ const signUpFunction = () => {
 
   var firstName = registration_firstName.value;
   var lastName = registration_lastName.value;
+  var userName = registration_userName.value;
   var email = registration_email.value;
   var password = registration_password.value;
   var passwordConfirm = registration_password_confirm.value;
-  var birthdate = registration_birthdate.value;
-  var academicLevel = registration_academicLevel.value;
-  var city = registration_city.value;
+
 
   // First Perform input validation
   if(!firstName){
@@ -47,23 +44,13 @@ const signUpFunction = () => {
     return;
   }
 
+  if(!userName){
+    alert('Please choose a username');
+    return;
+  }
+
   if(!email){
     alert('Please specify your email address');
-    return;
-  }
-
-  if(!birthdate){
-    alert('Please specify your date of Birth');
-    return;
-  }
-
-  if(!academicLevel){
-    alert('Please specify your Highest Academic Degree');
-    return;
-  }
-
-  if(!city){
-    alert('Please specify the city of your residence');
     return;
   }
 
@@ -77,6 +64,7 @@ const signUpFunction = () => {
     return;
   }
 
+  
   //Built in firebase function responsible for signing up a user
   auth.createUserWithEmailAndPassword(email, password)
   .then(() => {
@@ -86,15 +74,15 @@ const signUpFunction = () => {
       console.error(error);
   })
 
+
   const ID = usersCollection.doc();
   ID.set({
     first_name: firstName,
     last_name: lastName,
-    email: email,
-    birthdate: birthdate,
-    academic_level: academicLevel,
-    city: city
+    user_name: userName,
+    email: email
   });
+
 
   auth.currentUser.sendEmailVerification()
   .then(() => {
@@ -103,6 +91,7 @@ const signUpFunction = () => {
   .catch(error => {
       console.error(error);
   })
+
 
   window.location.assign('registerconfirm.html');
 
